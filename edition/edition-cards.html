@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas da Edição - PokéTCG Wiki</title>
+    <link rel="stylesheet" href="edition.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="search-bar">
+            <div class="input-group">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Pesquisar carta nesta edição">
+            </div>
+            <button class="cta-btn">Pesquisar</button>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="../inicial/index.html">Início</a>
+            <a href="../cartas/cartas.html">Cartas</a>
+            <a href="edition.html">Edições</a>
+            <a href="#">PokéQuiz</a>
+        </nav>
+    </header>
+
+    <main class="cards-section" style="flex-direction: column; align-items: center;">
+        
+        <div id="set-header" style="width: 100%; max-width: 1200px; margin-bottom: 40px; min-height: 120px;"></div>
+        
+        <div class="card-grid" id="grid-cartas-edicao"></div>
+        
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <h2>Pokémon</h2>
+            <p>©2026 Pokémon. ©1995 - 2026 Nintendo/Creatures Inc./GAME FREAK inc. TM, ®Nintendo.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tcgdex/sdk@2/dist/tcgdex.browser.global.min.js"></script>
+    <script src="edition.js"></script>
+</body>
+</html>

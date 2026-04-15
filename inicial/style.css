@@ -1,0 +1,208 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(180deg, #d3c7d6 0%, #4a2c5e 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- CABEÇALHO --- */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.search-bar {
+    background-color: #000;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px 5px 20px;
+    width: 400px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.input-group i {
+    color: #a0a0a0;
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+}
+
+.input-group input::placeholder {
+    color: #a0a0a0;
+}
+
+.cta-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.nav-menu {
+    background-color: #000;
+    border-radius: 30px;
+    padding: 15px 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.hero-section {
+    flex: 1; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    padding: 40px;
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px; 
+    max-width: 1200px;
+    width: 100%;
+}
+
+.logo-img {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    flex-shrink: 0; /* Impede a imagem de se encolher ou mover */
+}
+
+/* --- EFEITO DE DIGITAÇÃO MULTILINHA E ESTÁTICO --- */
+.pixel-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px; 
+    font-weight: 400;
+    line-height: 1.6;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2); 
+    
+    /* Configuração para não mover a tela: um tamanho mínimo fixo para o container */
+    display: flex;
+    flex-direction: column;
+    min-width: 25ch; 
+}
+
+.pixel-text span {
+    display: inline-block;
+    overflow: hidden; 
+    white-space: nowrap; 
+    width: 0; /* Começa invisível */
+    border-right: 4px solid transparent; 
+}
+
+.line-1 {
+    /* Linha 1 tem exatamente 23 caracteres */
+    animation: typing-1 1.5s steps(23, end) forwards;
+}
+
+.line-2 {
+    /* Linha 2 tem exatamente 20 caracteres. O delay de 1.5s faz ela esperar a linha 1 terminar */
+    animation: 
+        typing-2 1.5s steps(20, end) 1.5s forwards,
+        blink .75s step-end infinite;
+}
+
+@keyframes typing-1 {
+    from { width: 0; }
+    to { width: 23ch; } /* ch é a largura exata da fonte pixelada */
+}
+
+@keyframes typing-2 {
+    from { width: 0; }
+    to { width: 21ch; }
+}
+
+@keyframes blink {
+    from, to { border-right-color: transparent; }
+    50% { border-right-color: #fff; }
+}
+
+/* --- RODAPÉ --- */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-brand h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #1a1a1a; 
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: rgba(26, 26, 26, 0.7);
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.link-column h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.link-column a {
+    display: block;
+    color: rgba(26, 26, 26, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.link-column a:hover {
+    color: #000;
+}

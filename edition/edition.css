@@ -1,0 +1,82 @@
+/* =========================================
+   1. RESET E ESTILOS GLOBAIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(180deg, #d3c7d6 0%, #4a2c5e 100%);
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0; 
+}
+
+/* =========================================
+   2. CABEÇALHO E RODAPÉ (Padrão)
+   ========================================= */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.search-bar { background-color: #000; border-radius: 30px; display: flex; align-items: center; justify-content: space-between; padding: 5px 5px 5px 20px; width: 400px; }
+.input-group { display: flex; align-items: center; gap: 10px; flex: 1; }
+.input-group i { color: #a0a0a0; }
+.input-group input { background: transparent; border: none; color: #fff; font-family: inherit; font-size: 14px; outline: none; width: 100%; }
+.cta-btn { background-color: #fff; color: #000; border: none; border-radius: 20px; padding: 10px 20px; font-weight: 600; cursor: pointer; font-family: inherit; }
+
+.nav-menu { background-color: #000; border-radius: 30px; padding: 15px 30px; display: flex; gap: 30px; }
+.nav-menu a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-menu a:hover { color: #d3c7d6; }
+
+.site-footer { padding: 40px 60px; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: auto; width: 100%; }
+.footer-brand h2 { font-size: 24px; margin-bottom: 12px; color: #fff; font-weight: 700; }
+.footer-brand p { font-size: 12px; color: rgba(255, 255, 255, 0.6); line-height: 1.5; max-width: 500px; }
+
+/* =========================================
+   3. SEÇÃO PRINCIPAL (Centros e Grades)
+   ========================================= */
+.cards-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 60px 40px;
+    width: 100%;
+}
+
+/* GRADE DA TELA DE EDIÇÕES (4 colunas para logos grandes) */
+.edition-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; 
+    max-width: 1200px;
+    width: 100%;
+}
+
+.edition-card { background-color: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 25px 20px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-decoration: none; color: white; transition: all 0.2s ease-in-out; cursor: pointer; min-height: 200px; }
+.edition-card:hover { transform: translateY(-5px); background-color: rgba(0, 0, 0, 0.4); border-color: rgba(255, 255, 255, 0.3); }
+.edition-logo { width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 20px; }
+.edition-name { font-size: 16px; font-weight: 600; text-align: center; letter-spacing: 0.5px; }
+.skeleton-edition { background-color: rgba(0, 0, 0, 0.2); width: 100%; height: 200px; border-radius: 16px; }
+
+/* GRADE DA TELA DE CARTAS (Exatamente 5 colunas para as cartas) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px; 
+    max-width: 1200px;
+    width: 100%;
+}
+
+.skeleton-card { background-color: rgba(209, 209, 209, 0.3); width: 100%; aspect-ratio: 63 / 88; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.tcg-card { width: 100%; aspect-ratio: 63 / 88; border-radius: 8px; object-fit: contain; box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: transform 0.2s ease-in-out; cursor: pointer; }
+.tcg-card:hover { transform: scale(1.05); }

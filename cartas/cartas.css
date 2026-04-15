@@ -1,0 +1,202 @@
+/* =========================================
+   1. RESET E ESTILOS GLOBAIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    /* Fundo gradiente roxo do design original */
+    background: linear-gradient(180deg, #d3c7d6 0%, #4a2c5e 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0; 
+}
+
+/* =========================================
+   2. CABEÇALHO (HEADER DO DESIGN ORIGINAL)
+   ========================================= */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.search-bar {
+    background-color: #000;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px 5px 20px;
+    width: 400px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.input-group i {
+    color: #a0a0a0;
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+}
+
+.input-group input::placeholder {
+    color: #a0a0a0;
+}
+
+.cta-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.nav-menu {
+    background-color: #000;
+    border-radius: 30px;
+    padding: 15px 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* =========================================
+   3. PÁGINA DE CARTAS (GRADE E IMAGENS)
+   ========================================= */
+.cards-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    width: 100%;
+}
+
+.card-grid {
+    display: grid;
+    /* Aqui mudamos de 4 para 5 colunas */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px; 
+    /* Aumentei a largura máxima de 1000px para 1200px para dar espaço às 5 cartas */
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Retângulo de carregamento (Skeleton) */
+.skeleton-card {
+    /* Cinza levemente transparente para combinar com o fundo roxo */
+    background-color: rgba(209, 209, 209, 0.3); 
+    width: 100%;
+    aspect-ratio: 63 / 88; 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Imagem da carta de Pokémon final */
+.tcg-card {
+    width: 100%;
+    aspect-ratio: 63 / 88;
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* Efeito de zoom ao passar o mouse por cima da carta */
+.tcg-card:hover {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   4. RODAPÉ (FOOTER)
+   ========================================= */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Essa é a linha que empurra o footer para o final: */
+    margin-top: auto; 
+    width: 100%;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-brand h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #1a1a1a; /* Mantendo a cor escura do seu design original */
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: rgba(26, 26, 26, 0.7);
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #1a1a1a;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.link-column h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.link-column a {
+    display: block;
+    color: rgba(26, 26, 26, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.link-column a:hover {
+    color: #000;
+}
