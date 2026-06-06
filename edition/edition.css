@@ -1,6 +1,4 @@
-/* =========================================
-   1. RESET E ESTILOS GLOBAIS
-   ========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -18,40 +16,30 @@ body {
     margin: 0; 
 }
 
-/* =========================================
-   2. CABEÇALHO E RODAPÉ (Padrão)
-   ========================================= */
-/* =========================================
-   CABEÇALHO FIXO (STICKY HEADER)
-   ========================================= */
-/* =========================================
-   CABEÇALHO DINÂMICO (Transparente -> Vidro)
-   ========================================= */
+
 .top-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
     
-    /* Fica fixo no topo */
+
     position: sticky;
     top: 0;
     z-index: 1000;
     
-    /* ESTADO INICIAL (No topo absoluto) */
     background: transparent; 
     border-bottom: 1px solid transparent;
     
-    /* Transição suave de 0.3 segundos para qualquer mudança */
     transition: all 0.3s ease-in-out; 
 }
 
-/* ESTADO ROLADO (Quando o JS adiciona essa classe) */
+
 .top-header.scrolled {
-    background: rgba(30, 15, 45, 0.85); /* Fundo roxo escuro transparente */
-    backdrop-filter: blur(12px); /* O efeito de vidro embaçado */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil */
-    padding: 15px 40px; /* Bônus: o menu dá uma leve encolhida elegante */
+    background: rgba(30, 15, 45, 0.85); 
+    backdrop-filter: blur(12px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 40px; 
 }
 .search-bar { background-color: #000; border-radius: 30px; display: flex; align-items: center; justify-content: space-between; padding: 5px 5px 5px 20px; width: 400px; }
 .input-group { display: flex; align-items: center; gap: 10px; flex: 1; }
@@ -67,9 +55,7 @@ body {
 .footer-brand h2 { font-size: 24px; margin-bottom: 12px; color: #fff; font-weight: 700; }
 .footer-brand p { font-size: 12px; color: rgba(255, 255, 255, 0.6); line-height: 1.5; max-width: 500px; }
 
-/* =========================================
-   3. SEÇÃO PRINCIPAL (Centros e Grades)
-   ========================================= */
+
 .cards-section {
     flex: 1;
     display: flex;
@@ -78,7 +64,7 @@ body {
     width: 100%;
 }
 
-/* GRADE DA TELA DE EDIÇÕES (4 colunas para logos grandes) */
+
 .edition-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -93,7 +79,7 @@ body {
 .edition-name { font-size: 16px; font-weight: 600; text-align: center; letter-spacing: 0.5px; }
 .skeleton-edition { background-color: rgba(0, 0, 0, 0.2); width: 100%; height: 200px; border-radius: 16px; }
 
-/* GRADE DA TELA DE CARTAS (Exatamente 5 colunas para as cartas) */
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -107,17 +93,14 @@ body {
 .tcg-card:hover { transform: scale(1.05); }
 
 
-/* =========================================
-   RESPONSIVIDADE (Telas Menores / Celulares)
-   ========================================= */
 @media (max-width: 768px) {
     
-    /* 1. Cabeçalho: Pesquisa em cima e Links embaixo */
+   
     .top-header, 
     .top-header.scrolled {
-        flex-direction: column; /* Empilha os elementos em vez de deixá-los lado a lado */
+        flex-direction: column;
         padding: 15px 20px;
-        gap: 15px; /* Dá um respiro entre a pesquisa e os botões */
+        gap: 15px;
     }
 
     .search-bar {
@@ -126,29 +109,29 @@ body {
     }
 
     .search-bar .input-group {
-        width: 100%; /* Faz a barra de pesquisa ocupar a largura da tela no celular */
+        width: 100%;
     }
 
     .nav-menu {
         width: 100%;
         justify-content: center;
-        flex-wrap: wrap; /* Se os links não couberem, eles quebram a linha com elegância */
+        flex-wrap: wrap;
         gap: 15px;
     }
 
-    /* 2. Grades: De 5 para 2 colunas */
+
     .card-grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* Força 2 colunas */
-        gap: 10px; /* Reduz o espaço entre as cartas para caber melhor na tela */
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
     }
 
-    /* 3. Ajustes de respiro e textos para Mobile */
+   
     .hero-section {
         padding: 40px 20px;
     }
 
     .hero-content h1.pixel-text {
-        font-size: 1.5rem; /* Diminui o título principal para não vazar da tela */
+        font-size: 1.5rem;
     }
 
     main {
