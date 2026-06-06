@@ -9,9 +9,7 @@ if (telaListaEdicoes) {
     carregarCartasDaEdicao();
 }
 
-// ==========================================
-// FUNÇÃO 1: PARA A TELA "edition.html"
-// ==========================================
+
 async function carregarTodasEdicoes() {
     telaListaEdicoes.innerHTML = Array(20).fill('<div class="skeleton-edition"></div>').join('');
 
@@ -66,7 +64,7 @@ async function carregarCartasDaEdicao() {
     try {
         const detalhesDaEdicao = await tcgdex.set.get(setId);
         
-        // Botão alinhado à esquerda, e a div central (logo + texto) centralizada perfeitamente
+    
         headerInfo.innerHTML = `
             <a href="edition.html" class="btn-voltar" style="text-decoration: none; display: inline-flex; gap: 8px; align-items: center; color: #d3c7d6; border: 1px solid #d3c7d6; padding: 8px 16px; border-radius: 20px; transition: 0.2s;">
                 <i class="fa-solid fa-arrow-left"></i> Voltar para Edições
