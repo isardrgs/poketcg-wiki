@@ -4,12 +4,21 @@ Uma aplicação web interativa, moderna e totalmente responsiva dedicada ao univ
 
 ---
 
+## 📖 O que você encontra por aqui?
+
+O site foi criado para ser um guia rápido e divertido para fãs de Pokémon. Nele, os usuários podem:
+- **Pesquisar Cartas:** Buscar qualquer carta ou Pokémon rapidamente usando a barra de pesquisa conectada ao banco de dados oficial.
+- **Explorar Cartas Famosas:** Navegar por uma seção dedicada às cartas mais icônicas, raras e marcantes da franquia.
+- **Jogar o PokéQuiz:** Testar os conhecimentos sobre o universo Pokémon em um jogo de perguntas e respostas divertido e dinâmico.
+
+---
+
 ## 🚀 Funcionalidades Principais
 
 - **🔍 Busca Global Inteligente:** Sistema de pesquisa integrado em todas as páginas utilizando o SDK da TCGdex. Permite buscar tanto pelo nome do Pokémon quanto pelo nome específico da carta, com tratamento de erros de caixa (case-insensitive) e carregamento otimizado.
 - **✨ Cabeçalho Dinâmico (Glassmorphism):** Menu fixo (`position: sticky`) que inicia totalmente transparente e ganha um fundo escuro com desfoque elegante (`backdrop-filter: blur`) de forma suave assim que o usuário rola a página.
 - **📱 Responsividade Mobile Premium:** Layout completamente adaptado para celulares. A grade de exibição de cartas e edições se ajusta automaticamente de 5 colunas no desktop para **2 colunas no mobile**. Configuração de viewport travada para impedir zoom-out acidental, mantendo a consistência do design.
-- **🎮 PokéQuiz Interativo:** Um jogo de perguntas e respostas sobre o mundo Pokémon integrado nativamente.
+- **🎮 PokéQuiz Interativo:** Um jogo de perguntas e respostas integrado nativamente.
   - **Embaralhamento Inteligente:** Utiliza o algoritmo clássico *Fisher-Yates* para misturar tanto as perguntas quanto as alternativas a cada nova rodada.
   - **Fator Replay:** Sorteia um subconjunto de 5 perguntas de um banco maior a cada partida.
   - **Alta Performance:** Transições rápidas e dinâmicas (600ms) entre as perguntas após a validação visual da resposta (verde para correto, vermelho para incorreto).
