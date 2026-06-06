@@ -1,0 +1,358 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(180deg, #d3c7d6 0%, #4a2c5e 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- CABEÇALHO --- */
+/* =========================================
+   CABEÇALHO FIXO (STICKY HEADER)
+   ========================================= */
+/* =========================================
+   CABEÇALHO DINÂMICO (Transparente -> Vidro)
+   ========================================= */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    
+    /* Fica fixo no topo */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+    /* ESTADO INICIAL (No topo absoluto) */
+    background: transparent; 
+    border-bottom: 1px solid transparent;
+    
+    /* Transição suave de 0.3 segundos para qualquer mudança */
+    transition: all 0.3s ease-in-out; 
+}
+
+/* ESTADO ROLADO (Quando o JS adiciona essa classe) */
+.top-header.scrolled {
+    background: rgba(30, 15, 45, 0.85); /* Fundo roxo escuro transparente */
+    backdrop-filter: blur(12px); /* O efeito de vidro embaçado */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil */
+    padding: 15px 40px; /* Bônus: o menu dá uma leve encolhida elegante */
+}
+
+.search-bar {
+    background-color: #000;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px 5px 20px;
+    width: 400px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.input-group i {
+    color: #a0a0a0;
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+}
+
+.input-group input::placeholder {
+    color: #a0a0a0;
+}
+
+.cta-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.nav-menu {
+    background-color: #000;
+    border-radius: 30px;
+    padding: 15px 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.hero-section {
+    flex: 1; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    padding: 40px;
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px; 
+    max-width: 1200px;
+    width: 100%;
+}
+
+.logo-img {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    flex-shrink: 0; /* Impede a imagem de se encolher ou mover */
+}
+
+/* --- EFEITO DE DIGITAÇÃO MULTILINHA E ESTÁTICO --- */
+.pixel-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px; 
+    font-weight: 400;
+    line-height: 1.6;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2); 
+    
+    /* Configuração para não mover a tela: um tamanho mínimo fixo para o container */
+    display: flex;
+    flex-direction: column;
+    min-width: 25ch; 
+}
+
+.pixel-text span {
+    display: inline-block;
+    overflow: hidden; 
+    white-space: nowrap; 
+    width: 0; /* Começa invisível */
+    border-right: 4px solid transparent; 
+}
+
+.line-1 {
+    /* Linha 1 tem exatamente 23 caracteres */
+    animation: typing-1 1.5s steps(23, end) forwards;
+}
+
+.line-2 {
+    /* Linha 2 tem exatamente 20 caracteres. O delay de 1.5s faz ela esperar a linha 1 terminar */
+    animation: 
+        typing-2 1.5s steps(20, end) 1.5s forwards,
+        blink .75s step-end infinite;
+}
+
+@keyframes typing-1 {
+    from { width: 0; }
+    to { width: 23ch; } /* ch é a largura exata da fonte pixelada */
+}
+
+@keyframes typing-2 {
+    from { width: 0; }
+    to { width: 21ch; }
+}
+
+@keyframes blink {
+    from, to { border-right-color: transparent; }
+    50% { border-right-color: #fff; }
+}
+
+/* --- RODAPÉ --- */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-brand h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fefefe; 
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: #fefefe;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.link-column h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.link-column a {
+    display: block;
+    color: rgba(26, 26, 26, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.link-column a:hover {
+    color: #000;
+}
+
+/* =========================================
+   GRADE DE CARTAS (Página de Busca)
+   ========================================= */
+.cards-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 60px 40px;
+    width: 100%;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Força exatamente 5 colunas */
+    gap: 20px; 
+    max-width: 1200px;
+    width: 100%;
+}
+
+.tcg-card {
+    width: 100%;
+    aspect-ratio: 63 / 88;
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.tcg-card:hover {
+    transform: scale(1.05);
+}
+
+.skeleton-card {
+    background-color: rgba(209, 209, 209, 0.3);
+    width: 100%;
+    aspect-ratio: 63 / 88;
+    border-radius: 8px;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE GERAL E PÁGINA INICIAL
+   (Telemóveis / Celulares - Abaixo de 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Cabeçalho Dinâmico: Pesquisa em cima e Navegação em baixo */
+    .top-header, 
+    .top-header.scrolled {
+        flex-direction: column !important;
+        padding: 15px 20px !important;
+        gap: 15px !important;
+    }
+
+    .search-bar {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    .search-bar .input-group {
+        width: 100% !important;
+    }
+
+    .nav-menu {
+        width: 100% !important;
+        justify-content: center !important;
+        flex-wrap: wrap;
+        gap: 15px !important;
+    }
+
+    /* 2. Grid da Página de Busca: De 5 para 2 colunas */
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    /* --- NOVA CORREÇÃO PARA A PÁGINA INICIAL (image_1.png) --- */
+    /* Empilha a Logo em cima do Texto e Reduz Fonte */
+    .hero-section {
+        padding: 40px 20px !important; /* Ajustar padding geral */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 150px);
+    }
+
+    .hero-content {
+        flex-direction: column !important; /* Forçar Logo em cima, Texto embaixo */
+        align-items: center !important; /* Centralizar tudo */
+        gap: 25px; /* Espaço entre logo e texto */
+        text-align: center;
+        width: 100%;
+        max-width: 320px; /* Evitar que o conteúdo fique muito largo */
+    }
+
+    .logo-img {
+        width: 240px !important; /* Reduzir bem o tamanho da logo */
+        height: auto;
+        margin: 0 auto !important;
+        display: block;
+    }
+
+    h1.pixel-text {
+        font-size: 1.0rem !important; /* Reduzir drasticamente o tamanho do título pixelado */
+        line-height: 1.5; /* Ajustar espaçamento entre linhas */
+        margin: 0 !important;
+        width: 100%;
+        color: #fff;
+    }
+
+    /* Forçar quebra de linha em cada span para centralizar bem */
+    h1.pixel-text span {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Outros ajustes móveis gerais */
+    main {
+        padding: 30px 20px !important;
+    }
+}

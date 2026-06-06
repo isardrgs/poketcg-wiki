@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéQuiz - Teste seus conhecimentos!</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="search-bar">
+            <div class="input-group">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Pesquisar carta ou Pokémon">
+            </div>
+            <button class="cta-btn">Pesquisar</button>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="../index.html">Início</a>
+            <a href="../cartas/cartas.html">Cartas</a>
+            <a href="../edition/edition.html">Edições</a>
+            <a href="#" class="active">PokéQuiz</a>
+        </nav>
+    </header>
+
+    <main class="quiz-section">
+        <div class="quiz-container" id="quiz-box">
+            <div class="quiz-header">
+                <h2 id="question-text">Carregando pergunta...</h2>
+                <span id="question-counter">1/5</span>
+            </div>
+
+            <div class="options-grid" id="options-container">
+                </div>
+
+            <div class="result-area hidden" id="result-box">
+                <h2 id="score-text">Você acertou X de Y!</h2>
+                <button class="cta-btn restart-btn" id="restart-btn">Tentar Novamente</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <h2>Pokémon</h2>
+            <p>©2026 Pokémon. ©1995 - 2026 Nintendo/Creatures Inc./GAME FREAK inc. TM, ®Nintendo.</p>
+        </div>
+    </footer>
+
+    <script src="../global.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>
