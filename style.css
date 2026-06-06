@@ -128,6 +128,7 @@ body {
 }
 
 
+/* --- EFEITO DE DIGITAÇÃO MULTILINHA E ESTÁTICO --- */
 .pixel-text {
     font-family: 'Press Start 2P', cursive;
     font-size: 24px; 
@@ -135,45 +136,46 @@ body {
     line-height: 1.6;
     text-shadow: 2px 2px 0px rgba(0,0,0,0.2); 
     
-   
+    /* AUMENTAMOS o espaço mínimo para garantir que não corte nada */
     display: flex;
     flex-direction: column;
-    min-width: 27ch; 
+    min-width: 35ch; 
 }
 
 .pixel-text span {
     display: inline-block;
     overflow: hidden; 
     white-space: nowrap; 
-    width: 0;
+    width: 0; 
     border-right: 4px solid transparent; 
 }
 
 .line-1 {
-    animation: typing-1 1.5s steps(27, end) forwards;
+    /* Ajustado para acompanhar a nova largura */
+    animation: typing-1 1.5s steps(33, end) forwards;
 }
 
 .line-2 {
+    /* Ajustado para acompanhar a nova largura */
     animation: 
-        typing-2 1.5s steps(23, end) 1.5s forwards,
+        typing-2 1.5s steps(28, end) 1.5s forwards,
         blink .75s step-end infinite;
 }
 
 @keyframes typing-1 {
     from { width: 0; }
-    to { width: 27ch; } 
+    to { width: 33ch; } /* Forçando uma largura maior que o texto */
 }
 
 @keyframes typing-2 {
     from { width: 0; }
-    to { width: 23ch; } 
+    to { width: 28ch; } /* Forçando uma largura maior que o texto */
 }
 
 @keyframes blink {
     from, to { border-right-color: transparent; }
     50% { border-right-color: #fff; }
 }
-
 
 .site-footer {
     display: flex;
