@@ -1,10 +1,10 @@
-// Instancia o SDK em inglês ('en') para garantir o maior banco de dados
+
 const tcgdex = new TCGdex('en');
 
 async function carregarCartasFamosas() {
     const grid = document.getElementById('grid-cartas');
     
-    // 1. Gera 20 "esqueletos" cinzas para dar feedback visual enquanto carrega (5 colunas x 4 linhas)
+  
     grid.innerHTML = Array(20).fill('<div class="skeleton-card"></div>').join('');
 
     // 2. Lista blindada com 20 IDs garantidos pela API do TCGdex
@@ -35,14 +35,14 @@ async function carregarCartasFamosas() {
     ];
 
     try {
-        // 3. Pede para a API buscar todas as 20 cartas ao mesmo tempo
+      
         const promessas = cartasValiosasIDs.map(id => tcgdex.card.get(id));
         const resultados = await Promise.allSettled(promessas);
         
-        // Limpa os retângulos cinzas
+   
         grid.innerHTML = ''; 
 
-        // 4. Cria as imagens dinamicamente
+  
         resultados.forEach(resultado => {
             if (resultado.status === 'fulfilled' && resultado.value && resultado.value.image) {
                 const carta = resultado.value;
@@ -63,5 +63,5 @@ async function carregarCartasFamosas() {
     }
 }
 
-// Inicia a função
+
 carregarCartasFamosas();
