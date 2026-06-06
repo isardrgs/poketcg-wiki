@@ -146,7 +146,7 @@ body {
     /* Configuração para não mover a tela: um tamanho mínimo fixo para o container */
     display: flex;
     flex-direction: column;
-    min-width: 25ch; 
+    min-width: 27ch; /* Atualizado para o tamanho da nova linha 1 */
 }
 
 .pixel-text span {
@@ -158,25 +158,25 @@ body {
 }
 
 .line-1 {
-    /* Linha 1 tem exatamente 23 caracteres */
-    animation: typing-1 1.5s steps(23, end) forwards;
+    /* "Pesquise cartas ou responda" tem 27 caracteres */
+    animation: typing-1 1.5s steps(27, end) forwards;
 }
 
 .line-2 {
-    /* Linha 2 tem exatamente 20 caracteres. O delay de 1.5s faz ela esperar a linha 1 terminar */
+    /* "um quiz super divertido" tem 23 caracteres. Delay de 1.5s */
     animation: 
-        typing-2 1.5s steps(20, end) 1.5s forwards,
+        typing-2 1.5s steps(23, end) 1.5s forwards,
         blink .75s step-end infinite;
 }
 
 @keyframes typing-1 {
     from { width: 0; }
-    to { width: 23ch; } /* ch é a largura exata da fonte pixelada */
+    to { width: 27ch; } /* ch é a largura exata da fonte pixelada */
 }
 
 @keyframes typing-2 {
     from { width: 0; }
-    to { width: 21ch; }
+    to { width: 23ch; } /* ch é a largura exata da fonte pixelada */
 }
 
 @keyframes blink {
