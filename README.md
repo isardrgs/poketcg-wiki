@@ -2,6 +2,7 @@
 
 Uma aplicação web interativa, moderna e totalmente responsiva dedicada ao universo de Pokémon Trading Card Game (TCG). O projeto une lógica de programação, consumo de APIs e um design premium focado na experiência do usuário (UI/UX).
 
+Clique nesse link para acessar o site: https://isardrgs.github.io/poketcg-wiki/
 ---
 
 ## 📖 O que você encontra por aqui?
@@ -48,7 +49,7 @@ O projeto foi construído utilizando as melhores práticas de desenvolvimento fr
 
 ## 📦 Estrutura do Projeto
 
-A arquitetura de arquivos foi planejada para manter uma separação clara de responsabilidades (Clean Code):
+A arquitetura de arquivos foi planejada para manter uma separação clara de responsabilidades:
 
 ```text
 ├── 📁 cartas/          # Página e estilos da seção de cartas famosas
