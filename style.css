@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,38 +14,30 @@ body {
     flex-direction: column;
 }
 
-/* --- CABEÇALHO --- */
-/* =========================================
-   CABEÇALHO FIXO (STICKY HEADER)
-   ========================================= */
-/* =========================================
-   CABEÇALHO DINÂMICO (Transparente -> Vidro)
-   ========================================= */
+
 .top-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
     
-    /* Fica fixo no topo */
+
     position: sticky;
     top: 0;
     z-index: 1000;
-    
-    /* ESTADO INICIAL (No topo absoluto) */
+
     background: transparent; 
     border-bottom: 1px solid transparent;
-    
-    /* Transição suave de 0.3 segundos para qualquer mudança */
+
     transition: all 0.3s ease-in-out; 
 }
 
-/* ESTADO ROLADO (Quando o JS adiciona essa classe) */
+
 .top-header.scrolled {
-    background: rgba(30, 15, 45, 0.85); /* Fundo roxo escuro transparente */
-    backdrop-filter: blur(12px); /* O efeito de vidro embaçado */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil */
-    padding: 15px 40px; /* Bônus: o menu dá uma leve encolhida elegante */
+    background: rgba(30, 15, 45, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 40px; 
 }
 
 .search-bar {
@@ -109,7 +101,7 @@ body {
     font-weight: 500;
 }
 
-/* --- CONTEÚDO PRINCIPAL --- */
+
 .hero-section {
     flex: 1; 
     display: flex;
@@ -132,10 +124,10 @@ body {
     max-width: 450px;
     width: 100%;
     height: auto;
-    flex-shrink: 0; /* Impede a imagem de se encolher ou mover */
+    flex-shrink: 0;
 }
 
-/* --- EFEITO DE DIGITAÇÃO MULTILINHA E ESTÁTICO --- */
+
 .pixel-text {
     font-family: 'Press Start 2P', cursive;
     font-size: 24px; 
@@ -143,27 +135,25 @@ body {
     line-height: 1.6;
     text-shadow: 2px 2px 0px rgba(0,0,0,0.2); 
     
-    /* Configuração para não mover a tela: um tamanho mínimo fixo para o container */
+   
     display: flex;
     flex-direction: column;
-    min-width: 27ch; /* Atualizado para o tamanho da nova linha 1 */
+    min-width: 27ch; 
 }
 
 .pixel-text span {
     display: inline-block;
     overflow: hidden; 
     white-space: nowrap; 
-    width: 0; /* Começa invisível */
+    width: 0;
     border-right: 4px solid transparent; 
 }
 
 .line-1 {
-    /* "Pesquise cartas ou responda" tem 27 caracteres */
     animation: typing-1 1.5s steps(27, end) forwards;
 }
 
 .line-2 {
-    /* "um quiz super divertido" tem 23 caracteres. Delay de 1.5s */
     animation: 
         typing-2 1.5s steps(23, end) 1.5s forwards,
         blink .75s step-end infinite;
@@ -171,12 +161,12 @@ body {
 
 @keyframes typing-1 {
     from { width: 0; }
-    to { width: 27ch; } /* ch é a largura exata da fonte pixelada */
+    to { width: 27ch; } 
 }
 
 @keyframes typing-2 {
     from { width: 0; }
-    to { width: 23ch; } /* ch é a largura exata da fonte pixelada */
+    to { width: 23ch; } 
 }
 
 @keyframes blink {
@@ -184,7 +174,7 @@ body {
     50% { border-right-color: #fff; }
 }
 
-/* --- RODAPÉ --- */
+
 .site-footer {
     display: flex;
     justify-content: space-between;
@@ -233,9 +223,7 @@ body {
     color: #000;
 }
 
-/* =========================================
-   GRADE DE CARTAS (Página de Busca)
-   ========================================= */
+
 .cards-section {
     flex: 1;
     display: flex;
@@ -246,7 +234,7 @@ body {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Força exatamente 5 colunas */
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px; 
     max-width: 1200px;
     width: 100%;
@@ -274,13 +262,9 @@ body {
 }
 
 
-/* =========================================
-   RESPONSIVIDADE GERAL E PÁGINA INICIAL
-   (Telemóveis / Celulares - Abaixo de 768px)
-   ========================================= */
+
 @media (max-width: 768px) {
     
-    /* 1. Cabeçalho Dinâmico: Pesquisa em cima e Navegação em baixo */
     .top-header, 
     .top-header.scrolled {
         flex-direction: column !important;
@@ -304,16 +288,15 @@ body {
         gap: 15px !important;
     }
 
-    /* 2. Grid da Página de Busca: De 5 para 2 colunas */
+
     .card-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px !important;
     }
 
-    /* --- NOVA CORREÇÃO PARA A PÁGINA INICIAL (image_1.png) --- */
-    /* Empilha a Logo em cima do Texto e Reduz Fonte */
+
     .hero-section {
-        padding: 40px 20px !important; /* Ajustar padding geral */
+        padding: 40px 20px !important; 
         display: flex;
         justify-content: center;
         align-items: center;
@@ -321,37 +304,37 @@ body {
     }
 
     .hero-content {
-        flex-direction: column !important; /* Forçar Logo em cima, Texto embaixo */
-        align-items: center !important; /* Centralizar tudo */
-        gap: 25px; /* Espaço entre logo e texto */
+        flex-direction: column !important;
+        align-items: center !important; 
+        gap: 25px;
         text-align: center;
         width: 100%;
-        max-width: 320px; /* Evitar que o conteúdo fique muito largo */
+        max-width: 320px; 
     }
 
     .logo-img {
-        width: 240px !important; /* Reduzir bem o tamanho da logo */
+        width: 240px !important;
         height: auto;
         margin: 0 auto !important;
         display: block;
     }
 
     h1.pixel-text {
-        font-size: 1.0rem !important; /* Reduzir drasticamente o tamanho do título pixelado */
-        line-height: 1.5; /* Ajustar espaçamento entre linhas */
+        font-size: 1.0rem !important;
+        line-height: 1.5;
         margin: 0 !important;
         width: 100%;
         color: #fff;
     }
 
-    /* Forçar quebra de linha em cada span para centralizar bem */
+
     h1.pixel-text span {
         display: block;
         width: 100%;
         margin: 0 auto;
     }
 
-    /* Outros ajustes móveis gerais */
+
     main {
         padding: 30px 20px !important;
     }
